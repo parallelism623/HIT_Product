@@ -6,7 +6,12 @@ import torchvision
 
 from network import TransformNetwork
 from image_utils import ImageFolder, get_transformer, imload, imsave
+import torch
+torch.cuda.empty_cache()
+import gc
 
+gc.collect()
+torch.cuda.memory_summary(device=None, abbreviated=False)
 mse_criterion = torch.nn.MSELoss(reduction='mean')
 
 def extract_features(model, x, layers):
