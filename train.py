@@ -93,7 +93,7 @@ def network_train(args):
             for key, value in loss_logs.items():
                 str_ += '%s: %2.2f,\t'%(key, sum(value[-100:])/100)
             print(str_)
-            imsave(output_image.cpu(), args.save_path+"loss_logs.pth")
+            imsave(output_image.cpu(), args.save_path+"pngpng_train.png")
             torch.save(transform_network.state_dict(), args.save_path+"transform_network.pth")
     
     torch.save(loss_logs, args.save_path+"loss_logs.pth")
