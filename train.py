@@ -90,7 +90,7 @@ def network_train(args):
         optimizer.step()
         if iteration % args.check_iter == 0:
             str_ = '%s: iteration: [%d/%d/],\t'%(time.ctime(), iteration, args.max_iter)
-            for key, value in loss_logs.item():
+            for key, value in loss_logs.items():
                 str_ += '%s: %2.2f,\t'%(key, sum(value[-100:])/100)
             print(str_)
             imsave(output_image.cpu(), args.save_path+"loss_logs.pth")
