@@ -8,7 +8,7 @@ def load_transform_network(args):
     return transform_network
 
 def network_test(args):
-    device = ('cuda' if args.cude_device_no >= 0 else 'cpu')
+    device = ('cuda' if args.cuda_device_no >= 0 else 'cpu')
 
     transform_network = load_transform_network(args).to(device)
 
