@@ -12,7 +12,8 @@ def network_test(args):
 
     transform_network = load_transform_network(args).to(device)
 
-    input_image = imload(args.test_content, args.imsize)
+    input_image = imload(args.test_content, args.imsize).to(device)
+    
     with torch.no_grad():
         output_image = transform_network(input_image)
     imsave(output_image, args.output)
