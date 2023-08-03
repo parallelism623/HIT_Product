@@ -6,6 +6,7 @@ import tempfile
 # Khách hàng vào trang, sẽ có ô để tải ảnh lên, 1 ô để chọn style, 1 ô để show kết quả
 # 1 nút để tải hình ảnh về
 # Thêm file
+#Chạy chương trình: streamlit run make_streamlit.py
 
 # # Bước 1: Tạo ra fodel chứa tất cả các hình ảnh chạy thử nghiệm với path
 # model_load_path = 'result/'
