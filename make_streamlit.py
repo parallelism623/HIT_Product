@@ -32,7 +32,7 @@ with col1:
     file = st.file_uploader('chọn file')
     if file is not None:
         st.image(file)
-#st.text(type(file))
+
 #Col 2: Show ra các style ảnh để khách hàng chọn style Chọn file style
 selected_image = ''
 image_path = ''
@@ -57,7 +57,6 @@ with col3:
     st.title("Chạy Mô Hình với Streamlit")
 
     model_load_paths = 'result/'
-    st.write(image_path)
     image_path = image_path[(image_path.rfind('\\') + 1):-4]
     model_load_path = os.path.join(model_load_paths, f'{image_path}.pth') # file .pth
 
@@ -67,7 +66,8 @@ with col3:
     os.makedirs(temp_dir, exist_ok=True)
     temp_image_path = os.path.join(temp_dir, "temp_image.png")
     with open(temp_image_path, 'wb') as temp_file:
-        temp_file.write(file.read())
+        if not(file is None):
+            temp_file.write(file.read())
     test_content_path = temp_image_path # file content
         
     output_path = "test_result"
