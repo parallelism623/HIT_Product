@@ -42,7 +42,7 @@ def build_parser():
     
     parser.add_argument('--batchs', type=int,
                         help='Batch size', default=8)
-    parser.add_argument('--lr', type=int,
+    parser.add_argument('--lr', type=float,
                         help='Learning rate to optimize network', default=0.1)
     
     parser.add_argument('--imsize', type=int,
