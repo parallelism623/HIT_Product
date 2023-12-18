@@ -46,7 +46,7 @@ def imsave(tensor, path):
     if tensor.is_cuda:
         tensor = tensor.cpu()
     tensor = torchvision.utils.make_grid(tensor)    
-    torchvision.utils.save_image(denormalize(tensor).clamp_(0.0, 1.0), path)
+    torchvision.utils.save_image(tensor, path)
     return None
     
 def imload(path, imsize=None, cropsize=None):
